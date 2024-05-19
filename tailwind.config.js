@@ -18,7 +18,11 @@ export default {
         xl: "1100px",
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#081127",
+      },
+    },
   },
   plugins: ["@tailwindcss/container-queries"],
 };

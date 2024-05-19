@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const FeaturedTabs = ({ tabs, activeTab, setActiveTab }) => {
   return (
     <div className="py-5">
@@ -20,6 +22,18 @@ const FeaturedTabs = ({ tabs, activeTab, setActiveTab }) => {
       </div>
     </div>
   );
+};
+
+FeaturedTabs.propTypes = {
+  tabs: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string,
+      images: PropTypes.arrayOf(PropTypes.string),
+    })
+  ).isRequired,
+  activeTab: PropTypes.number.isRequired,
+  setActiveTab: PropTypes.func.isRequired,
 };
 
 export default FeaturedTabs;
